@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+        <script src="index.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <title>eCommerce</title>
+    </head>
+    <body>
+        <!-- Responsive Navbar -->
+        <div class="topnav" id="myTopnav">
+          <div class="logo">
+            <i class="fas fa-store"></i>
+          </div>
+          <div class="topside">
+            <input type="text" placeholder="Search..">
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <div class="login-part">
+            <a class="Loginbtn">Login</a>
+            <i class="fa fa-sign-in Loginbtn"></i>
+            <a>Registrar</a>
+            <i class="fa fa-sign-out"></i>
+            </div>
+            </ul>
+          </div>
+          <div class="botside">
+          <i class="fas fa-cart-arrow-down"> </i>
+          <span class="separation-bar"></span>
+          <i class="fas fa-cart-arrow-down"> </i>
+          <span class="separation-bar"></span>
+          <i class="fas fa-cart-arrow-down"> </i>
+          <span class="separation-bar"></span>
+          <i class="fas fa-cart-arrow-down"> </i>
+          </div>
+          </div>
+
+          <!-- Login Menu -->
+          <div class="login-menu">
+            <a class="closebtn">&times;</a>
+
+            <!-- Login Form -->
+            <form action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+              </div>
+            
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                <button type="submit">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+            
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Newest Product List -->
+          <div class="new-product-list">
+            <svg viewbox="-1.5 -1.5 103 153">
+              <polygon points="100 0, 100 100, 50 85, 0 100, 0 0" fill="#726f70" stroke-width="4" stroke="#756f70" />
+              <text x="50" y="40" text-anchor="middle" fill="#FFF" font-size="24">Newest</text>
+              <text x="50" y="60" text-anchor="middle" fill="#FFF" font-size="24">Products</text>
+            </svg>
+            <ul id="new-product-ul">
+
+            </ul>
+          </div>
+
+
+          <!-- Product Cards -->
+          <div class="cards-loop">
+          <div class="card">
+            <img src="assets/product1.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$15559.99</p>
+            <p>Some text about the jeans..</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        
+          <div class="card active">
+            <img src="assets/product2.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$196.99</p>
+            <p>Some text about the jeans..</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+          
+        <div class="card">
+          <img src="assets/product3.png" alt="Denim Jeans" style="width:100%">
+          <h1>Tailored Jeans</h1>
+          <p class="price">$1439.99</p>
+          <p>Some text about the jeans..</p>
+          <p><button>Add to Cart</button></p>
+        </div>
+
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+
+      <script type="module">
+
+const api = axios.create({
+    baseURL: 'http://localhost:3333'
+}); 
+
+  api.get('products').then(response => {
+            const newprods = response.data;
+            const ul = document.getElementById('new-product-ul');
+            newprods.map(prod => {
+              const div = document.createElement('div');
+              const img = document.createElement('img');
+              img.src = prod.image_url;
+            div.className = 'newprod-card';
+            div.appendChild(img);
+            div.appendChild(createLi(prod));
+            ul.appendChild(div);
+          });
+        })
+        .catch(error => console.error(error));
+
+    const createLi = (prod) => {
+      const li = document.createElement('li');
+      li.textContent = `${prod.title}: \r\n ${prod.description} \r\n R$${prod.price}`;
+
+      return li;
+    };
+
+      </script>
+    </body>
+</html>

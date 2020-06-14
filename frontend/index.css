@@ -1,0 +1,350 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+body{
+  background-color: rgb(255, 255, 255);
+}
+/* Responsive Navbar */
+.topnav {
+  background-color: rgb(255, 255, 255);
+    height: 90px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0px 0px 16px 16px;
+}
+
+.topnav .topside{
+ background: linear-gradient(110deg, #b61c4f 60%, #69152f 60%);
+
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.topnav .topside .login-part{
+  color:white;
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.topnav .topside .login-part i{
+  color:white;
+  font-size: 24px;
+  margin: 0px 10px 0px 10px;
+}
+
+.topnav .botside{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 45%;
+  box-shadow:  0 0 1em rgb(170, 170, 164), 0 0 1em rgb(44, 42, 42);
+}
+.topnav .botside i{
+  color:#333;
+    font-size:30px;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+}
+
+.topnav .botside .separation-bar{
+  height: 90%;
+  width: 0.04%;
+  background-color: rgba(44, 42, 42, 0.808);
+}
+
+.topnav .logo{
+  background-color: white;
+  top:10px;
+  height: 120%;
+  width: 8%;
+  z-index: 5;
+  position:absolute;
+  left:10%;
+  box-shadow: inset 0 0 1em rgb(170, 170, 164), 0 0 1em rgb(44, 42, 42);
+  text-align: center;
+  display: table;
+  border-radius: 14px 0px 14px 0px;
+}
+
+.topnav .logo i{
+    color:#333;
+    font-size:60px;
+    vertical-align: middle;
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+.topnav input[type=text] {
+  width: 50%;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 0;
+  font-size: 17px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.topnav  button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav button:hover {
+  background: #ccc;
+}
+/* Login Menu */
+
+.login-menu{
+  height: 0;
+  width: 100%;
+  position: fixed; 
+  align-self: center;
+  justify-self: center;
+  z-index: 10; 
+  overflow-y: hidden; 
+  transition: 0.5s; 
+  background-color: rgba(255, 255, 255, 0.966); 
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%; 
+  width: 100%; 
+  text-align: center;
+  margin-top: 30px;
+}
+
+.login-menurlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; 
+  transition: 0.3s;
+}
+
+.login-menu a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.login-menu .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+/* Login Form */
+
+.login-menu input[type=text], .login-menu input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login-menu button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-menu button:hover {
+  opacity: 0.8;
+}
+
+.login-menu .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.login-menu .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.login-menu img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.login-menu .container {
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-menu span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/*New Product Items */
+.new-product-list{
+  width: 90%;
+  height: 200px;
+  background:#f3f1f2;
+  box-shadow:  0 0 1em rgb(49, 49, 48), 0 0 0.5em rgb(44, 42, 42);
+  border: 2px #726f70 solid;
+  margin-top: 40px;
+  border-radius: 0px 20px 20px 0px;
+  display: flex;
+  margin-left:5%;
+}
+
+.new-product-list svg{
+  height: 80%;
+  z-index: 2;
+}
+
+.new-product-list #new-product-ul{
+  display: flex;
+  list-style-type: none;
+  white-space: pre-line;
+}
+
+.new-product-list #new-product-ul .newprod-card{
+  margin: 0px 20px 0px 20px;
+  background-color: rgba(32, 32, 32, 0.849); 
+  text-align: center;
+}
+
+.new-product-list #new-product-ul .newprod-card img{
+  width:80%;
+}
+
+.new-product-list #new-product-ul .newprod-card li{
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+/*Products Gallery */
+
+.cards-loop{
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height:auto;
+  margin-top:3%;
+  z-index: -1;
+  justify-content: center;
+
+  transform: translateY(10px)
+}
+
+.cards-loop .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.445);
+  max-width: 300px;
+  margin: 10px;
+  text-align: center;
+  font-family: arial;
+  width:15%;
+  opacity: 0.6;
+  background-color: rgba(32, 32, 32, 0.849); 
+  
+}
+
+.cards-loop .card img{
+  height: 80px;
+}
+.cards-loop .card.active img{
+  height: 120px;
+}
+
+.cards-loop .card.active {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 10px;
+  text-align: center;
+  font-family: arial;
+  width:20%;
+  opacity: 1; 
+  align-self: center;
+  transition: ease-in;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: 8;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.cards-loop .price {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+}
+
+.cards-loop .card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.cards-loop .card button:hover {
+  opacity: 0.7;
+}
+
+.cards-loop .prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: rgb(76, 130, 175);
+  font-weight: bold;
+  font-size: 36px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.cards-loop .next {
+  right: 15%;
+  border-radius: 3px 0 0 3px;
+}
+
+.cards-loop .prev {
+  left: 15%;
+  border-radius: 3px 0 0 3px;
+}
+
+.cards-loop .prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
